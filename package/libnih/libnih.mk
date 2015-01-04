@@ -1,6 +1,5 @@
-LIBNIH_VERSION = 1.0.3
-LIBNIH_SITE = https://launchpad.net/libnih/1.0/$(LIBNIH_VERSION)/+download
-LIBNIH_SOURCE = libnih-$(LIBNIH_VERSION).tar.gz
+LIBNIH_VERSION = e4edea5653e700a07c67f714ab8b7c63179f3be2
+LIBNIH_SITE = https://github.com/keybuk/libnih/tarball/master
 HOST_LIBNIH_DEPENDENCIES = host-dbus host-expat
 LIBNIH_DEPENDENCIES = dbus expat pkgconf host-libnih
 LIBNIH_INSTALL_STAGING = YES
