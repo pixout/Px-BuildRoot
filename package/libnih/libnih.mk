@@ -5,6 +5,7 @@ LIBNIH_DEPENDENCIES = dbus expat pkgconf host-libnih
 LIBNIH_INSTALL_STAGING = YES
 
 HOST_LIBNIH_AUTORECONF = YES
+HOST_LIBNIH_AUTORECONF_OPT = -i -v
 
 define HOST_LIBNIH_CONFIG_CMDS
 	(cd $(@D) && rm -rf config.cache; \
@@ -18,6 +19,7 @@ define HOST_LIBNIH_CONFIG_CMDS
 endef
 
 LIBNIH_AUTORECONF = YES
+LIBNIH_AUTORECONF_OPT = -i -v
 
 LIBNIH_CONF_OPT += NIH_DBUS_TOOL=$(HOST_DIR)/usr/bin/nih-dbus-tool
 
