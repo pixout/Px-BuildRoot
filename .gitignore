@@ -12,3 +12,5 @@
 *.orig
 *.rej
 *~
+/board/pixout
+/configs/pixout_defconfig
