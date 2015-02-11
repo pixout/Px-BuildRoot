@@ -8,14 +8,14 @@ LIBNIH_INSTALL_STAGING = YES
 HOST_LIBNIH_AUTORECONF = YES
 
 define HOST_LIBNIH_CONFIG_CMDS
-    (cd $(@D) && rm -rf config.cache; \
-            $(HOST_CONFIGURE_OPTS) \
-	CFLAGS="$(HOST_CFLAGS)" \
-	LDFLAGS="$(HOST_LDFLAGS)" \
-	./configure \
-	--prefix="$(HOST_DIR)/usr" \
-	--sysconfdir="$(HOST_DIR)/etc" \
-    )
+	(cd $(@D) && rm -rf config.cache; \
+	        $(HOST_CONFIGURE_OPTS) \
+		CFLAGS="$(HOST_CFLAGS)" \
+		LDFLAGS="$(HOST_LDFLAGS)" \
+		./configure \
+		--prefix="$(HOST_DIR)/usr" \
+		--sysconfdir="$(HOST_DIR)/etc" \
+	)
 endef
 
 LIBNIH_AUTORECONF = YES
