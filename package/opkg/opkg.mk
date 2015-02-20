@@ -4,10 +4,9 @@
 #
 #############################################################
 
-OPKG_VERSION = 635
+OPKG_VERSION = 0.2.4
 OPKG_SOURCE = opkg-$(OPKG_VERSION).tar.gz
-OPKG_SITE = http://opkg.googlecode.com/svn/trunk/
-OPKG_SITE_METHOD = svn
+OPKG_SITE = http://git.yoctoproject.org/cgit/cgit.cgi/opkg/snapshot
 OPKG_INSTALL_STAGING = YES
 OPKG_CONF_OPT = --disable-curl --disable-gpg
 OPKG_AUTORECONF = YES
