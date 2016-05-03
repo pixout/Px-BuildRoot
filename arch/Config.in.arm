@@ -59,6 +59,9 @@ config BR2_xscale
 	bool "xscale"
 config BR2_iwmmxt
 	bool "iwmmxt"
+config BR2_cortex_a7
+	bool "cortex-A7"
+	select BR2_ARM_CPU_HAS_NEON
 endchoice
 
 config BR2_arm1136jf_s
@@ -123,6 +126,7 @@ config BR2_GCC_TARGET_TUNE
 	default "cortex-a8"	if BR2_cortex_a8
 	default "cortex-a9"	if BR2_cortex_a9
 	default "cortex-a15"	if BR2_cortex_a15
+	default "cortex-a7"	if BR2_cortex_a7
 	default "strongarm110"	if BR2_sa110
 	default "strongarm1100"	if BR2_sa1100
 	default "xscale"	if BR2_xscale
@@ -145,6 +149,7 @@ config BR2_GCC_TARGET_ARCH
 	default "armv7-a"	if BR2_cortex_a8
 	default "armv7-a"	if BR2_cortex_a9
 	default "armv7-a"	if BR2_cortex_a15
+	default "armv7-a"	if BR2_cortex_a7
 	default "armv4"		if BR2_sa110
 	default "armv4"		if BR2_sa1100
 	default "armv5te"	if BR2_xscale
