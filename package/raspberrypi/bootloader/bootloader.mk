@@ -9,10 +9,14 @@ BOOTLOADER_LICENSE_FILE = boot/LICENCE.broadcom
 define BOOTLOADER_INSTALL_TARGET_CMDS
 	mkdir -p $(TARGET_DIR)/boot
 	cp $(@D)/boot/start.elf $(TARGET_DIR)/boot/start.elf
+	cp $(@D)/boot/start_*.elf $(TARGET_DIR)/boot/
 	cp $(@D)/boot/bootcode.bin $(TARGET_DIR)/boot/bootcode.bin
 	cp $(@D)/boot/fixup.dat $(TARGET_DIR)/boot/fixup.dat
-	cp $(@D)/boot/fixup_x.dat $(TARGET_DIR)/boot/fixup_x.dat
-	cp $(@D)/boot/start_x.elf $(TARGET_DIR)/boot/start_x.elf
+	cp $(@D)/boot/fixup_*.dat $(TARGET_DIR)/boot/
+	cp $(@D)/boot/bcm2708-rpi-* $(TARGET_DIR)/boot/
+	cp $(@D)/boot/bcm2709-rpi-* $(TARGET_DIR)/boot/
+	cp $(@D)/boot/bcm2710-rpi-* $(TARGET_DIR)/boot/
+	cp -R $(@D)/boot/overlays $(TARGET_DIR)/boot/
 	# Generate boot config files
     echo "#Generated config.txt by RaspberryPi-Buildroot at "`date +%c` >  $(TARGET_DIR)/boot/config.txt
 
