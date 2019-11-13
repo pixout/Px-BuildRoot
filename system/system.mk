@@ -12,7 +12,7 @@ TARGET_GENERIC_GETTY_TERM:=$(call qstrip,$(BR2_TARGET_GENERIC_GETTY_TERM))
 target-generic-hostname:
 	mkdir -p $(TARGET_DIR)/etc
 	echo "$(TARGET_GENERIC_HOSTNAME)" > $(TARGET_DIR)/etc/hostname
-	ifeq (,$(wildcard $(TARGET_DIR)/etc/hosts))
+	ifeq ("$(wildcard $(TARGET_DIR)/etc/hosts)", "")
 		echo -e "127.0.0.1\tlocalhost" > $(TARGET_DIR)/etc/hosts
 	endif
 	$(SED) '$$a \127.0.1.1\t$(TARGET_GENERIC_HOSTNAME)' \
