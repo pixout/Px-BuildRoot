@@ -13,12 +13,10 @@ define BOOTLOADER_INSTALL_TARGET_CMDS
 	cp $(@D)/boot/bootcode.bin $(TARGET_DIR)/boot/bootcode.bin
 	cp $(@D)/boot/fixup.dat $(TARGET_DIR)/boot/fixup.dat
 	cp $(@D)/boot/fixup_*.dat $(TARGET_DIR)/boot/
-	cp $(@D)/boot/bcm2708-rpi-* $(TARGET_DIR)/boot/
-	cp $(@D)/boot/bcm2709-rpi-* $(TARGET_DIR)/boot/
-	cp $(@D)/boot/bcm2710-rpi-* $(TARGET_DIR)/boot/
+	cp $(@D)/boot/bcm2* $(TARGET_DIR)/boot/
 	cp -R $(@D)/boot/overlays $(TARGET_DIR)/boot/
 	# Generate boot config files
-    echo "#Generated config.txt by RaspberryPi-Buildroot at "`date +%c` >  $(TARGET_DIR)/boot/config.txt
+        echo "#Generated config.txt by RaspberryPi-Buildroot at "`date +%c` >  $(TARGET_DIR)/boot/config.txt
 
 	echo "arm_freq=$(BR2_RASPBERRYPI_CPU_SPEED)" >> $(TARGET_DIR)/boot/config.txt
 #	echo "core_freq=$(BR2_RPI_CONFIG_CPU_SPEED)" >> $(TARGET_DIR)/boot/config.txt
